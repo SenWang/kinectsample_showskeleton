@@ -52,7 +52,7 @@ namespace SoulSolutions.Kinect.SampleApplication
 
         private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-            SkeletonFrame allSkeletons = e.OpenSkeletonFrame();
+
 
             using (SkeletonFrame skframe = e.OpenSkeletonFrame())
             {
