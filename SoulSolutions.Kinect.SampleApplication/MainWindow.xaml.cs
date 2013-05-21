@@ -42,18 +42,14 @@ namespace SoulSolutions.Kinect.SampleApplication
                                      MaxDeviationRadius = 0.04f
                                  };
 
-            nui.SkeletonStream.Enable(parameters);
-
             #endregion
-
             //add event to receive skeleton data
+            nui.SkeletonStream.Enable(parameters);
             nui.SkeletonFrameReady += NuiSkeletonFrameReady;
         }
 
         private void NuiSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-
-
             using (SkeletonFrame skframe = e.OpenSkeletonFrame())
             {
                 if (skframe != null)
@@ -65,9 +61,7 @@ namespace SoulSolutions.Kinect.SampleApplication
                                              where s.TrackingState == SkeletonTrackingState.Tracked
                                              select s).FirstOrDefault();
                 }
-            }
-
-            
+            }            
         }
     }
 }
